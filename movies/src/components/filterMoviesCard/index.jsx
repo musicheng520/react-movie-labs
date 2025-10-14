@@ -33,10 +33,10 @@ export default function FilterMoviesCard(props) {
       .catch((err) => console.error("Failed to fetch genres:", err));
   }, []);
 
-  const handleChange = (e, type, value) => {
-    e.preventDefault();
-    // Completed later
-  };
+ const handleChange = (e, type, value) => {
+    e.preventDefault()
+    props.onUserInput(type, value)   // NEW
+  }
 
   const handleTextChange = (e) => {
     handleChange(e, "name", e.target.value);
